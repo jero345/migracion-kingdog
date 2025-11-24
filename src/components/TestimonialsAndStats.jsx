@@ -4,9 +4,12 @@ import img1 from "../assets/testimonios/Barranquilla.webp";
 import img2 from "../assets/testimonios/Bogotá.webp";
 import img3 from "../assets/testimonios/medellin.webp";
 import img4 from "../assets/testimonios/pereira.webp";
+import img5 from "../assets/testimonios/Medellin22.webp";
+import img6 from "../assets/testimonios/Cucuta.webp";
+import img7 from "../assets/testimonios/Cali.webp";
 
 const TestimonialsAndStats = () => {
-  const images = [img1, img2, img3, img4];
+  const images = [img1, img2, img3, img4, img5, img6, img7];
 
   // ---------------------------
   // CONTADORES ANIMADOS
@@ -58,22 +61,32 @@ const TestimonialsAndStats = () => {
         </p>
       </div>
 
-      {/* CARRUSEL SUPER FLUIDO */}
+      {/* CARRUSEL SUPER FLUIDO - VELOCIDAD DIFERENTE MOBILE/DESKTOP */}
       <div className="overflow-hidden w-full py-6 relative">
         {/* Gradientes laterales para efecto fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
         
-        <div className="flex gap-8 animate-slide whitespace-nowrap">
-          {/* Se duplica el array para hacer un loop infinito */}
-          {[...images, ...images].map((img, index) => (
+        {/* Mobile: animación más rápida | Desktop: animación normal */}
+        <div 
+          className="flex gap-4 md:gap-8 whitespace-nowrap" 
+          style={{
+            animation: window.innerWidth < 768 
+              ? 'testimonial-slide-mobile 25s linear infinite' 
+              : 'testimonial-slide-desktop 40s linear infinite',
+            willChange: 'transform'
+          }}
+        >
+          {/* Duplicamos las imágenes para loop infinito */}
+          {[...images, ...images, ...images].map((img, index) => (
             <div key={index} className="relative group flex-shrink-0">
               <div className="absolute -inset-2 bg-gradient-to-r from-[#0b6059] to-[#d4a017] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
               <div className="relative">
                 <img
                   src={img}
-                  className="w-80 h-80 object-cover rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] border-4 border-white"
+                  className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] border-4 border-white"
                   alt="Testimonio"
+                  loading="lazy"
                 />
                 {/* Overlay con icono */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b6059]/80 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
@@ -160,6 +173,36 @@ const TestimonialsAndStats = () => {
         </div>
 
       </div>
+
+      {/* ESTILOS CSS - ANIMACIONES OPTIMIZADAS */}
+      <style>{`
+        /* Animación para MOBILE (25 segundos - más rápido) */
+        @keyframes testimonial-slide-mobile {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(calc(-100% / 0.5));
+          }
+        }
+
+        /* Animación para DESKTOP (40 segundos - más lento y elegante) */
+        @keyframes testimonial-slide-desktop {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(calc(-100% / 3));
+          }
+        }
+
+        /* Pausar animación al hacer hover en desktop */
+        @media (min-width: 768px) {
+          div[style*="testimonial-slide"]:hover {
+            animation-play-state: paused !important;
+          }
+        }
+      `}</style>
 
     </section>
   );

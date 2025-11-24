@@ -22,7 +22,7 @@ const Footer = () => {
               <img
                 src="/src/assets/img/logo.png"
                 alt="King Dog Logo"
-                className="h-36 w-auto object-contain relative z-10 drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                className="h-48 w-auto object-contain relative z-10 drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="text-center">

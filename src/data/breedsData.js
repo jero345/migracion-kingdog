@@ -20,7 +20,7 @@ import pastorGanDesc from "../assets/desc/raza-mediana/pasrtor-gan-desc.webp";
 import pinsecherDesc from "../assets/desc/raza-pequeña/pinscher desc.webp";
 import pomeraniaDesc from "../assets/desc/raza-pequeña/pomerania desc.webp";
 import russelDesc from "../assets/desc/raza-pequeña/russel desc.webp";
-import salchichaDesc from "../assets/desc/raza-pequeña/salchicha desc.webp";
+import Teckel from "../assets/desc/raza-pequeña/salchicha-desc.webp";
 import shitzuDesc from "../assets/desc/raza-pequeña/shitzu dec.webp";
 import yorkshireDesc from "../assets/desc/raza-pequeña/yorkshire desc.webp";
 
@@ -459,8 +459,8 @@ export const breedsDetails = {
     ]
   },
 
-  "Salchicha": {
-    descImage: salchichaDesc,
+  "Teckel": {
+    descImage: Teckel,
     descripcion: "El Teckel, también conocido como Salchicha, es una raza pequeña, pero con un carácter grande y lleno de energía. Su cuerpo alargado y sus patas cortas lo hacen único y fácilmente reconocible, mientras que su personalidad juguetona y su valentía lo convierten en un excelente compañero para quienes buscan un perro leal y activo. En King Dog, tu criadero de perros en Colombia, ofrecemos cachorros de Salchicha (Teckel) en venta, todos con certificación de pureza de raza y una garantía de salud.",
     caracteristicas: [
       "Perro pequeño pesando entre 3 y 7 kg con cuerpo alargado único",

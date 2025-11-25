@@ -1,5 +1,5 @@
 import React from 'react';
-
+import logo from "../assets/img/logo.png"; 
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-[#2d2d2d] to-[#1a1a1a] text-white py-16 font-['Baloo_Thambi_2'] relative overflow-hidden">
@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-[#0b6059] rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
               <img
-                src="/src/assets/img/logo.png"
+                src={logo} 
                 alt="King Dog Logo"
                 className="h-48 w-auto object-contain relative z-10 drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
               />

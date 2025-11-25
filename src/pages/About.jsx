@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import nosotros from "../assets/img/nosotros.webp";
+
+// Importar los iconos de "ofrecemos"
+import compromisoCalidad from "../assets/ofrecemos/compromiso con la calidad.png";
+import transparenciaConfianza from "../assets/ofrecemos/transparencia y confianza.png";
+import bienestarAnimal from "../assets/ofrecemos/bienestar animal.png";
+import asesoriaPersonalizada from "../assets/ofrecemos/asesoria personalizada.png";
+
 
 const AboutPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,7 +53,7 @@ const AboutPage = () => {
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-[#0b6059] to-[#d4a017] rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-xl"></div>
               <img
-                src="/src/assets/img/nosotros.webp"
+                 src={nosotros} 
                 alt="Nosotros"
                 className="relative rounded-2xl shadow-2xl w-full max-w-lg mx-auto border-4 border-white group-hover:scale-[1.02] transition-transform duration-500"
               />
@@ -70,10 +78,10 @@ const AboutPage = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
               
               {[
-                { img: "/src/assets/ofrecemos/compromiso con la calidad.png", title: "Compromiso con la Calidad", desc: "Cachorros de raza pura con certificados de salud y pureza.", icon: "🏆" },
-                { img: "/src/assets/ofrecemos/transparencia y confianza.png", title: "Transparencia y Confianza", desc: "Garantías claras y procesos transparentes que respaldan cada venta.", icon: "🤝" },
-                { img: "/src/assets/ofrecemos/bienestar animal.png", title: "Bienestar Animal", desc: "Criamos cachorros en un entorno seguro y lleno de cariño, promoviendo su salud y felicidad.", icon: "❤️" },
-                { img: "/src/assets/ofrecemos/asesoria personalizada.png", title: "Asesoría Personalizada", desc: "Acompañamiento total, brindando la mejor asesoría pre y postventa.", icon: "💬" }
+                { img: compromisoCalidad, title: "Compromiso con la Calidad", desc: "Cachorros de raza pura con certificados de salud y pureza.", icon: "🏆" },
+                { img: transparenciaConfianza, title: "Transparencia y Confianza", desc: "Garantías claras y procesos transparentes que respaldan cada venta.", icon: "🤝" },
+                { img: bienestarAnimal, title: "Bienestar Animal", desc: "Criamos cachorros en un entorno seguro y lleno de cariño, promoviendo su salud y felicidad.", icon: "❤️" },
+                { img: asesoriaPersonalizada, title: "Asesoría Personalizada", desc: "Acompañamiento total, brindando la mejor asesoría pre y postventa.", icon: "💬" }
               ].map((item, index) => (
                 <div key={index} className="text-center group cursor-pointer">
                   <div className="mb-5 flex justify-center">
